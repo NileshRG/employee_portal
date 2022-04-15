@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+	<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>	
+		<h2 style="text-align:center;text-style:bold;font-size:50px">Employee Portal</h2>
+		
+		<div style="padding:30px">
+		<table class="table table-success table-striped">
+		<thead>
+		<tr>
+			<th> Employee Id</th>
+			<th> First Name</th>
+			<th> Last Name</th>
+			<th> Designation</th>
+			<th> Annual Salary</th>
+			
+		</tr>
+		
+		
+		</thead>
+		 <tbody>
+  	
+  		
+      <tr  th:each="employee : ${empList }"  >
+		<td th:text="${employee.employeeId}">Employee Id</td>
+		<td th:text="${employee.firstName}">Student Name</td>
+		
+		<td th:text="${employee.lastName}">Last Name</td>
+		<td th:text="${employee.designation}">Designation</td>
+		<td th:text="${employee.salary}">Salary</td>
+		
+		
+		
+  
+  </tbody>
+  
+</table>
+</div>
+		
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+	<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<h2 style="text-align:center;text-style:bold;font-size:50px">Employee Portal</h2>
+
+		
+		<div style="margin: auto;width: 60%;height: 70px;padding: 10px;margin-top: 50px;">
+				<div style="float:left;width:30%;height:100px">
+					
+					<button type="button" th:onclick="|window.location.href='/newEmployee'|"  class="btn btn-primary">New Employee</button>   
+					
+				</div>
+				<div style="float:left;width:40%;height:100px">
+					
+					<button type="button" th:onclick="|window.location.href='/updateList'|"  class="btn btn-primary">Update Salary</button>   
+					
+				</div>
+				<div style="float:left;width:30%;height:100px">
+					
+					<button type="button" th:onclick="|window.location.href='/viewAll'|"  class="btn btn-primary">View All Employee</button>   
+					
+				</div>
+
+
+
+
+		</div>
+</body>
+</html>
+

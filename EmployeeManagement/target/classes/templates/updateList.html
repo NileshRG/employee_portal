@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+	<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>	
+		<h2 style="text-align:center;text-style:bold;font-size:50px">Employee Portal</h2>
+		
+		<div style="padding:30px">
+		<table class="table table-success table-striped">
+		<thead>
+		<tr>
+			<th> Employee Id</th>
+			<th> First Name</th>
+			<th> Last Name</th>
+			<th> Designation</th>
+			<th> Annual Salary</th>
+			<th> Salary History</th>
+			<th> Update Salary</th>
+		</tr>
+		
+		
+		</thead>
+		 <tbody>
+  	
+  		
+      <tr  th:each="employeeList : ${employeeList }"  >
+		<td th:text="${employeeList.employeeId}">Employee Id</td>
+		<td th:text="${employeeList.firstName}">Student Name</td>
+		
+		<td th:text="${employeeList.lastName}">Last Name</td>
+		<td th:text="${employeeList.designation}">Designation</td>
+		<td th:text="${employeeList.salary}">Salary</td>
+		
+		
+		<td>
+			<a th:href="@{'/salaryHistory/' + ${employeeList.employeeId}}">Salary History</a>
+		</td>    
+		<td>
+			<a th:href="@{'/updateSalary/' + ${employeeList.employeeId}}">Update Salary </a>
+		</td>    
+	</tr>
+  
+  </tbody>
+  
+</table>
+</div>
+		
+</body>
+</html>
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+	<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+		<h2 style="text-align:center;text-style:bold;font-size:50px">Employee Portal</h2>
+		<h1 style="text-align:center;text-style:bold;font-size:25px;margin-top:50px;">Employee Salary Updation History</h1>
+		<div  th:each="empList: ${empList}"style="margin: auto;  width: 50%;  border: 3px solid green;  padding: 10px; border-bottom:none;">
+			<div class="form-row" >
+				
+				<div class="form-group col-md-6" >
+			      <label class="form-label">Employee Id</label>
+			      <input type="view" th:readonly="readonly" th:value="${empList.employeeId}"class="form-control" placeholder="First Name">
+			    </div>
+    
+			    <div class="form-group col-md-6" >
+			      <label class="form-label">First Name</label>
+			      <input type="view" th:readonly="readonly" th:value="${empList.firstName}"class="form-control" placeholder="First Name">
+			    </div>
+	    
+			    <div class="form-group col-md-6" >
+			      <label class="form-label">Last Name</label>
+			      <input type="view" th:readonly="readonly" th:value="${empList.lastName}" class="form-control" placeholder="Last Name">
+			    </div>
+			    <div class="form-group col-md-6" >
+			      <label class="form-label">Address</label>
+			      <input type="view" th:readonly="readonly" th:value="${empList.address}" class="form-control" placeholder="Last Name">
+			    </div>
+    
+   			</div>
+   			<div class="form-row">
+   				<div class="form-group col-md-6" >
+			      <label class="form-label">Designation</label>
+			      <input type="view" th:readonly="readonly" th:value="${empList.designation}" class="form-control" placeholder="Last Name">
+			    </div>
+			    <div class="form-group col-md-6" >
+			      <label class="form-label">Current Salary</label>
+			      <input type="view" th:readonly="readonly" th:value="${empList.salary}" class="form-control" placeholder="Last Name">
+			    </div>
+   			</div>
+  		</div>
+  		<div  th:each="salaryList: ${salaryList}"style="margin: auto;  width: 50%;  border: 3px solid green;  padding: 10px; border-top:none;">
+  			<div class="form-row">
+   				
+			    <div class="form-group col-md-3" >
+			      <label class="form-label">Base Salary</label>
+			      <input type="view" th:readonly="readonly" th:value="${salaryList.baseSalary}" class="form-control" placeholder="Last Name">
+			    </div>
+			    <div class="form-group col-md-3" >
+			      <label class="form-label">House Rent Allowance</label>
+			      <input type="view" th:readonly="readonly" th:value="${salaryList.hra}" class="form-control" placeholder="Last Name">
+			    </div>
+			    <div class="form-group col-md-3" >
+			      <label class="form-label">Conveyance Allowance</label>
+			      <input type="view" th:readonly="readonly" th:value="${salaryList.coa}" class="form-control" placeholder="Last Name">
+			    </div>
+			    <div class="form-group col-md-3" >
+			      <label class="form-label">Medical Reimbursement</label>
+			      <input type="view" th:readonly="readonly" th:value="${salaryList.med}" class="form-control" placeholder="Last Name">
+			    </div>
+   			</div>
+   			<div class="form-row">
+   				
+			    <div class="form-group col-md-3" >
+			      <label class="form-label">Provident Fund</label>
+			      <input type="view" th:readonly="readonly" th:value="${salaryList.pf}" class="form-control" placeholder="Last Name">
+			    </div>
+			    <div class="form-group col-md-3" >
+			      <label class="form-label">Leave Travel Allowance</label>
+			      <input type="view" th:readonly="readonly" th:value="${salaryList.lta}" class="form-control" placeholder="Last Name">
+			    </div>
+			    <div class="form-group col-md-3" >
+			      <label class="form-label">Special Allowance</label>
+			      <input type="view" th:readonly="readonly" th:value="${salaryList.specialAllowance}" class="form-control" placeholder="Last Name">
+			    </div>
+			    
+   			</div>
+		</div>
+		<div style="padding:10px">
+		<table class="table table-success table-striped" style="margin: auto;  width: 50%;  border: 3px solid green;  padding: 10px;">
+		<thead>
+		<tr>
+			<th> Date of Updation</th>
+			<th> Last Annual Salary</th>
+			<th> New Annual Salary</th>
+			
+			<th> Updated By</th>
+		</tr>
+		
+		
+		</thead>
+		 <tbody>
+  	
+  		
+      <tr  th:each="list : ${salUpdateList }"  >
+		
+		<td th:text="${list.dateOfUpdation}">Date Of Updation</td>
+		<td th:text="${list.lastAnnualSalary}">Last Annual Salary</td>
+		<td th:text="${list.newAnnualSalary}">New Annual Salary</td>
+		<td th:text="${list.updated_by}">Updated By</td>
+		
+		
+		
+		
+		
+		 
+	</tr>
+  
+  </tbody>
+  
+</table>
+</div>
+</body>
+</html>
+

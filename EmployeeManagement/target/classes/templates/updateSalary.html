@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<h2 style="text-align:center;text-style:bold;font-size:50px">Employee Portal</h2>
+<div style="margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;margin-top:80px;">
+<form action="#"  th:action="@{/saveUpdatedSalary(id=${employeeList.employeeId},currentSal=${employeeList.salary},fname=${employeeList.firstName},lname=${employeeList.lastName},desig=${employeeList.designation},address=${employeeList.address})}" th:each="employeeList:${empList}" method="POST">
+ 
+    <div class="form-row">
+    	   
+	    <div class="form-group col-md-6" th:object="${employeeUpdateLog}">
+	      <label class="form-label">First Name</label>
+	      <input type="view" th:readonly="readonly" th:field="*{firstName}" th:value="${employeeList.firstName}"class="form-control" >
+	    </div>
+	    
+	    <div class="form-group col-md-6" th:object="${employeeUpdateLog}">
+	      <label class="form-label">Last Name</label>
+	      <input type="view" th:readonly="readonly" th:field="*{lastName}" th:value="${employeeList.lastName}" class="form-control" >
+	    </div>
+	    
+    
+   </div>
+   <div class="form-row">
+   		<div class="form-group col-md-6" th:object="${employeeUpdateLog}">
+	      <label class="form-label">Designation </label>
+	      <input type="view" th:field="*{designation}"  th:readonly="readonly" th:value="${employeeList.designation}"class="form-control" placeholder="Designation">
+	    </div>
+   		 
+	    
+	     <div class="form-group col-md-6" th:object="${salLog}">
+	      <label class="form-label">Current Annual Salary </label>
+	      <input type="view" th:field="*{lastAnnualSalary}" th:readonly="readonly" th:value="${employeeList.salary}"class="form-control" placeholder="Annual Salary">
+	    </div>
+    
+    
+    
+	    
+    
+    </div>
+    <div class="form-row">
+    	<div class="form-group col-md-6" th:object="${employeeUpdateLog}">
+	      <label class="form-label">New Annual Salary </label>
+	      <input type="number" th:field="*{salary}" class="form-control" placeholder="Annual Salary">
+	    </div>
+    	
+	    
+	    <div class="form-group col-md-6" th:object="${salary}">
+	      <label class="form-label"> Base Salary </label>
+	      <input type="number" th:field="*{baseSalary}" class="form-control" placeholder="Base Salary">
+	    </div>
+    
+    
+    	
+    </div>
+    <div class="form-row">
+    	<div class="form-group col-md-6" th:object="${salary}">
+	      <label class="form-label">House Rent Allowance</label>
+	      <input type="number" th:field="*{hra}" class="form-control" placeholder="House Rent Allowance">
+	    </div>
+	    
+	    <div class="form-group col-md-6" th:object="${salary}">
+	      <label class="form-label">Conveyance Allowance </label>
+	      <input type="number" th:field="*{coa}" class="form-control" placeholder="Conveyance Allowance">
+	    </div>
+    </div>
+    
+    <div class="form-row">
+    	<div class="form-group col-md-6" th:object="${salary}">
+	      <label class="form-label">Special Allowance</label>
+	      <input type="number" th:field="*{specialAllowance}" class="form-control" placeholder="Special Allowance">
+	    </div>
+	    
+	    <div class="form-group col-md-6" th:object="${salary}">
+	      <label class="form-label">Medical Reimbursement </label>
+	      <input type="number" th:field="*{med}" class="form-control" placeholder="Medical Reimbursement">
+	    </div>
+    </div>
+    
+    <div class="form-row">
+    	<div class="form-group col-md-6" th:object="${salary}">
+	      <label class="form-label">Leave Travel Allowance</label>
+	      <input type="number" th:field="*{lta}" class="form-control" placeholder="Leave Travel Allowance">
+	    </div>
+	    
+	    <div class="form-group col-md-6" th:object="${salary}">
+	      <label class="form-label">Provident fund </label>
+	      <input type="number" th:field="*{pf}" class="form-control" placeholder="Provident fund">
+	    </div>
+    </div>
+   <div class="form-row">
+    	
+	    
+	    <div class="form-group col-md-6" th:object="${salLog}">
+	      <label class="form-label">Updated By</label>
+	      <input type="text" th:field="*{updated_by}" class="form-control" placeholder="">
+	    </div>
+    </div>
+    	    
+    
+  
+  
+ 
+  <div class="col-md-12 text-center">
+  <button type="submit" class="btn btn-primary ">Submit</button>
+  </div>
+</form>
+</div>
+
+
+</body>
+</html>
